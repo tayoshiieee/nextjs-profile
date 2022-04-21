@@ -14,6 +14,9 @@ module.exports = {
       wider: ".05em",
       widest: ".15em",
     },
+    // fontFamily: {
+    //   noto: "Noto Serif JP",
+    // },
   },
   plugins: [],
   variants: {
