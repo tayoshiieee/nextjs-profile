@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 
 export default function Home() {
   return (
@@ -37,12 +39,13 @@ export default function Home() {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff"></meta>
       </Head>
-      <nav></nav>
+
       <header>
         <div className="p-2 md:flex justify-between">
           <div className="text-center">
             <Image
               src="/images/logo.png"
+              art="logo"
               width={120}
               height={60}
               // layout="fill"
@@ -50,18 +53,47 @@ export default function Home() {
             />
           </div>
           <div className="my-auto flex justify-center text-[#008c8d] text-sm md:text-base font-medium">
-            <a href="" className="mx-2 md:mx-4">
+            <ScrollLink
+              to="about"
+              className="mx-2 md:mx-4 hover:opacity-50 hover:cursor-pointer"
+              smooth={true}
+              duration={300}
+            >
               ABOUT
-            </a>
-            <a href="" className="mx-2 md:mx-4">
+            </ScrollLink>
+            <ScrollLink
+              to="skills"
+              className="mx-2 md:mx-4 hover:opacity-50 hover:cursor-pointer"
+              smooth={true}
+              duration={300}
+            >
               SKILLS
-            </a>
-            <a href="" className="mx-2 md:mx-4">
+            </ScrollLink>
+            <ScrollLink
+              to="values"
+              className="mx-2 md:mx-4 hover:opacity-50 hover:cursor-pointer"
+              smooth={true}
+              duration={300}
+            >
               VALUES
-            </a>
-            <a href="" className="mx-2 md:mx-4">
+            </ScrollLink>
+            <ScrollLink
+              to="future"
+              className="mx-2 md:mx-4 hover:opacity-50 hover:cursor-pointer"
+              smooth={true}
+              duration={300}
+            >
               FUTURE
-            </a>
+            </ScrollLink>
+            {/* <Link href="#skills">
+              <a className="mx-2 md:mx-4">SKILLS</a>
+            </Link>
+            <Link href="#values">
+              <a className="mx-2 md:mx-4">VALUES</a>
+            </Link>
+            <Link href="#future">
+              <a className="mx-2 md:mx-4">FUTURE</a>
+            </Link> */}
           </div>
         </div>
       </header>
@@ -86,7 +118,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="md:py-10 w-full bg-cover md:bg-about">
+        <section
+          id="about"
+          className="md:pt-10 md:pb-36 w-full bg-cover md:bg-about"
+        >
           <div className="mx-auto text-center py-6 md:flex justify-center">
             <p className="text-xl md:text-3xl font-bold tracking-widest">
               私について
@@ -110,7 +145,7 @@ export default function Home() {
                 趣味
               </p>
               <p className="leading-7">
-                つれづれなるまゝに日暮らし硯にむかひて心にうつりゆくよしなし事をそこはかとなく書きつくれば、あやしうこそものぐるほしけれ。
+                つれづれなるまゝに日暮らし硯にむかひて心にうつりゆくよしなし事をそこはかとなく書きつくれば、あやしうこそものぐるほし。
               </p>
             </div>
             <div className="mx-auto w-[320px] p-5">
@@ -124,7 +159,7 @@ export default function Home() {
                 />
               </div>
               <p className="text-[#008c8d] font-bold text-xl md:text-2xl text-center my-1 md:my-3">
-                趣味
+                好きな食べ物
               </p>
               <p className="leading-7">
                 つれづれなるまゝに日暮らし硯にむかひて心にうつりゆくよしなし事をそこはかとなく書きつくれば、あやしうこそものぐるほしけれ。つれづれなるまゝに日暮らし硯にむかひて
@@ -141,15 +176,18 @@ export default function Home() {
                 />
               </div>
               <p className="text-[#008c8d] font-bold text-xl md:text-2xl text-center my-1 md:my-3">
-                趣味
+                性格
               </p>
               <p className="leading-7">
-                つれづれなるまゝに日暮らし硯にむかひて心にうつりゆくよしなし事をそこはかとなく書きつくれば、あやしうこそものぐるほしけれ。
+                つれづれなるまゝに日暮らし硯にむかひて心にうつりゆくよしなし事をそこはかとなく書きつくれば、
               </p>
             </div>
           </div>
         </section>
-        <section className="py-5 md:py-10 w-full bg-cover bg-skillsSp md:bg-skills">
+        <section
+          id="skills"
+          className="py-5 md:-mt-20 md:py-10 w-full bg-cover bg-skillsSp md:bg-skills"
+        >
           <div className="max-w-screen-lg mx-auto md:flex justify-center">
             <div className="my-auto px-10 md:p-10">
               <div className="md:hidden mx-auto text-center py-4">
@@ -268,7 +306,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="">
+        <section id="values" className="">
           <div className="mx-auto text-center py-6 md:flex justify-center">
             <p className="text-xl md:text-3xl font-bold tracking-widest">
               価値観
@@ -284,6 +322,7 @@ export default function Home() {
                   <div className="text-center">
                     <Image
                       src="/images/value1.png"
+                      art="value1"
                       width={184}
                       height={157}
                       // layout="fill"
@@ -301,6 +340,7 @@ export default function Home() {
                   <div className="text-center">
                     <Image
                       src="/images/value2.png"
+                      art="value2"
                       width={184}
                       height={157}
                       // layout="fill"
@@ -318,6 +358,7 @@ export default function Home() {
                   <div className="text-center">
                     <Image
                       src="/images/value3.png"
+                      art="value3"
                       width={184}
                       height={157}
                       // layout="fill"
@@ -335,7 +376,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="-mt-64 pt-64 w-full bg-cover bg-futureSp md:bg-future">
+        <section
+          id="future"
+          className="-mt-64 pt-64 w-full bg-cover bg-futureSp md:bg-future"
+        >
           <div className="pt-8 md:py-12 mt-5 mx-auto max-w-screen-lg md:flex justify-center">
             <div className="mx-5 md:max-w-[480px]">
               <div className="mx-auto text-center md:flex justify-start">
