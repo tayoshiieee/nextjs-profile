@@ -55,7 +55,7 @@ export default function Home() {
           <div className="my-auto flex justify-center text-[#008c8d] text-sm md:text-base font-medium">
             <ScrollLink
               to="about"
-              className="mx-2 md:mx-4"
+              className="mx-2 md:mx-4 hover:opacity-50 hover:cursor-pointer"
               smooth={true}
               duration={300}
             >
@@ -63,7 +63,7 @@ export default function Home() {
             </ScrollLink>
             <ScrollLink
               to="skills"
-              className="mx-2 md:mx-4"
+              className="mx-2 md:mx-4 hover:opacity-50 hover:cursor-pointer"
               smooth={true}
               duration={300}
             >
@@ -71,7 +71,7 @@ export default function Home() {
             </ScrollLink>
             <ScrollLink
               to="values"
-              className="mx-2 md:mx-4"
+              className="mx-2 md:mx-4 hover:opacity-50 hover:cursor-pointer"
               smooth={true}
               duration={300}
             >
@@ -79,7 +79,7 @@ export default function Home() {
             </ScrollLink>
             <ScrollLink
               to="future"
-              className="mx-2 md:mx-4"
+              className="mx-2 md:mx-4 hover:opacity-50 hover:cursor-pointer"
               smooth={true}
               duration={300}
             >
