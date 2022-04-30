@@ -3,8 +3,20 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
+import { getPostsData } from "../lib/post";
 
-export default function Home() {
+//SSGの場合
+export const getStaticProps = async () => {
+  const allPostsData = getPostsData();
+  // console.log(allPostsData);
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+};
+
+export default function Home({ allPostsData }) {
   return (
     <>
       <Head>
@@ -102,10 +114,10 @@ export default function Home() {
           <div className="p-5 text-center md:flex justify-between">
             <div className="md:my-auto md:ml-20 md:text-left">
               <h1 className="tracking-widest font-bold text-2xl md:text-4xl text-white">
-                メインタイトル
+                YOSHIDA TATSUYA
               </h1>
               <p className="tracking-widest my-3 text-base md:text-2xl text-white">
-                サブタイトル
+                自己紹介
               </p>
             </div>
             <div className="px-10 md:p-10 md:text-right">
@@ -131,57 +143,23 @@ export default function Home() {
             </p>
           </div>
           <div className="mx-auto max-w-screen-lg md:flex justify-center">
-            <div className="mx-auto w-[320px] p-5">
-              <div className="text-center">
-                <Image
-                  src="/images/about-1.png"
-                  width={184}
-                  height={157}
-                  // layout="fill"
-                  objectFit="contain"
-                />
+            {allPostsData.map(({ index, image, subheading, text }) => (
+              <div key={index} className="mx-auto w-[320px] p-5">
+                <div className="text-center">
+                  <Image
+                    src={image}
+                    width={184}
+                    height={157}
+                    // layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+                <p className="text-[#008c8d] font-bold text-xl md:text-2xl text-center my-1 md:my-3">
+                  {subheading}
+                </p>
+                <p className="leading-7">{text}</p>
               </div>
-              <p className="text-[#008c8d] font-bold text-xl md:text-2xl text-center my-1 md:my-3">
-                趣味
-              </p>
-              <p className="leading-7">
-                つれづれなるまゝに日暮らし硯にむかひて心にうつりゆくよしなし事をそこはかとなく書きつくれば、あやしうこそものぐるほし。
-              </p>
-            </div>
-            <div className="mx-auto w-[320px] p-5">
-              <div className="text-center">
-                <Image
-                  src="/images/about-2.png"
-                  width={184}
-                  height={157}
-                  // layout="fill"
-                  objectFit="contain"
-                />
-              </div>
-              <p className="text-[#008c8d] font-bold text-xl md:text-2xl text-center my-1 md:my-3">
-                好きな食べ物
-              </p>
-              <p className="leading-7">
-                つれづれなるまゝに日暮らし硯にむかひて心にうつりゆくよしなし事をそこはかとなく書きつくれば、あやしうこそものぐるほしけれ。つれづれなるまゝに日暮らし硯にむかひて
-              </p>
-            </div>
-            <div className="mx-auto w-[320px] p-5">
-              <div className="text-center">
-                <Image
-                  src="/images/about-3.png"
-                  width={184}
-                  height={157}
-                  // layout="fill"
-                  objectFit="contain"
-                />
-              </div>
-              <p className="text-[#008c8d] font-bold text-xl md:text-2xl text-center my-1 md:my-3">
-                性格
-              </p>
-              <p className="leading-7">
-                つれづれなるまゝに日暮らし硯にむかひて心にうつりゆくよしなし事をそこはかとなく書きつくれば、
-              </p>
-            </div>
+            ))}
           </div>
         </section>
         <section
