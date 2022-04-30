@@ -114,10 +114,10 @@ export default function Home({ allPostsData }) {
           <div className="p-5 text-center md:flex justify-between">
             <div className="md:my-auto md:ml-20 md:text-left">
               <h1 className="tracking-widest font-bold text-2xl md:text-4xl text-white">
-                メインタイトル
+                YOSHIDA TATSUYA
               </h1>
               <p className="tracking-widest my-3 text-base md:text-2xl text-white">
-                サブタイトル
+                自己紹介
               </p>
             </div>
             <div className="px-10 md:p-10 md:text-right">
