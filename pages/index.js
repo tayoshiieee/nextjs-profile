@@ -3,18 +3,21 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
-import { getPostsData } from "../lib/post";
+import CardAbout from "../components/CardAbout";
+import CardValue from "../components/CardValue";
 
-//SSGの場合
-export const getStaticProps = async () => {
-  const allPostsData = getPostsData();
-  // console.log(allPostsData);
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-};
+// import { getPostsData } from "../lib/post";
+
+// //SSGの場合
+// export const getStaticProps = async () => {
+//   const allPostsData = getPostsData();
+//   // console.log(allPostsData);
+//   return {
+//     props: {
+//       allPostsData,
+//     },
+//   };
+// };
 
 export default function Home({ allPostsData }) {
   return (
@@ -57,7 +60,7 @@ export default function Home({ allPostsData }) {
           <div className="text-center">
             <Image
               src="/images/logo.png"
-              art="logo"
+              alt="logo"
               width={120}
               height={60}
               // layout="fill"
@@ -143,11 +146,28 @@ export default function Home({ allPostsData }) {
             </p>
           </div>
           <div className="mx-auto max-w-screen-lg md:flex justify-center">
-            {allPostsData.map(({ index, image, subheading, text }) => (
+            <CardAbout
+              image="/images/about-1.png"
+              subheading="趣味"
+              text="映画を見るのが好きです。好きな映画監督はクエンティン・タランティーノです。"
+            ></CardAbout>
+            <CardAbout
+              image="/images/about-2.png"
+              subheading="好きな食べ物"
+              text="焼きそば、からあげ、うどんが好きです。つまり麺が好きです。つれづれなるまゝに日暮らし硯にむかひて心にうつりゆくよしなし事をそこはかとなく書きつくれば、あやしうこそものぐるほしけれ。"
+            ></CardAbout>
+            <CardAbout
+              image="/images/about-3.png"
+              subheading="性格"
+              text="小心者の内弁慶。つれづれなるまゝに日暮らし硯にむかひて心にうつりゆくよしなし事をそこはかとなく書きつくれば、あやしうこそものぐるほしけれ。"
+            ></CardAbout>
+            {/* SSGの場合 */}
+            {/* {allPostsData.map(({ index, image, subheading, text }) => (
               <div key={index} className="mx-auto w-[320px] p-5">
                 <div className="text-center">
                   <Image
                     src={image}
+                    alt="about"
                     width={184}
                     height={157}
                     // layout="fill"
@@ -159,7 +179,7 @@ export default function Home({ allPostsData }) {
                 </p>
                 <p className="leading-7">{text}</p>
               </div>
-            ))}
+            ))} */}
           </div>
         </section>
         <section
@@ -284,7 +304,7 @@ export default function Home({ allPostsData }) {
             </div>
           </div>
         </section>
-        <section id="values" className="">
+        <section id="values">
           <div className="mx-auto text-center py-6 md:flex justify-center">
             <p className="text-xl md:text-3xl font-bold tracking-widest">
               価値観
@@ -293,63 +313,18 @@ export default function Home({ allPostsData }) {
               VALUE
             </p>
           </div>
-          <div className="">
-            <div className="mx-auto max-w-screen-lg md:flex justify-center">
+          <div>
+            <div className="mx-auto max-w-screen-lg">
               <div className="relative mx-5 md:px-5 md:py-10 bg-white md:divide-x-2 divide-[#c5eaea] md:flex justify-center rounded-lg">
-                <div className="mx-auto md:w-max-[320px] px-5 py-5 md:py-0">
-                  <div className="text-center">
-                    <Image
-                      src="/images/value1.png"
-                      art="value1"
-                      width={184}
-                      height={157}
-                      // layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                  <p className="text-[#384359] font-bold text-lg text-center my-1 md:my-3">
-                    価値観01
-                  </p>
-                  <p className="text-sm md:text-base leading-7 md:leading-7">
-                    つれづれなるまゝに日暮らし硯にむかひて心にうつりゆくよしなし事をそこはかとなく書きつくれば、あやしうこそものぐるほしけれ。
-                  </p>
-                </div>
-                <div className="mx-auto md:w-max-[320px] px-5 py-5 md:py-0">
-                  <div className="text-center">
-                    <Image
-                      src="/images/value2.png"
-                      art="value2"
-                      width={184}
-                      height={157}
-                      // layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                  <p className="text-[#384359] font-bold text-lg text-center my-1 md:my-3">
-                    価値観02
-                  </p>
-                  <p className="text-sm md:text-base leading-7 md:leading-7">
-                    つれづれなるまゝに日暮らし硯にむかひて心にうつりゆくよしなし事をそこはかとなく書きつくれば、あやしうこそものぐるほしけれ。
-                  </p>
-                </div>
-                <div className="mx-auto md:w-max-[320px] px-5 py-5 md:py-0">
-                  <div className="text-center">
-                    <Image
-                      src="/images/value3.png"
-                      art="value3"
-                      width={184}
-                      height={157}
-                      // layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                  <p className="text-[#384359] font-bold text-lg text-center my-1 md:my-3">
-                    価値観03
-                  </p>
-                  <p className="text-sm md:text-base leading-7 md:leading-7">
-                    つれづれなるまゝに日暮らし硯にむかひて心にうつりゆくよしなし事をそこはかとなく書きつくれば、あやしうこそものぐるほしけれ。
-                  </p>
-                </div>
+                <CardValue title="価値観00" image="/images/value1.png">
+                  つれづれなるまりゆくよしなし事をそこはかとなく書きつくればつれづれなるまりゆくよしなし事をそこはかとなく書きつくれば、あやしうこそものぐるほしけれ。
+                </CardValue>
+                <CardValue title="価値観02" image="/images/value2.png">
+                  つれづれなるまりゆくよしなし事をそこはかとなく書きつくれば、あやしうこそものぐるほしけれ。
+                </CardValue>
+                <CardValue title="価値観03" image="/images/value3.png">
+                  つれづれなるまりゆくよしなし事をそこはかとなく書きつくれば、あやしうこそものぐるほしけれ。
+                </CardValue>
               </div>
             </div>
           </div>
