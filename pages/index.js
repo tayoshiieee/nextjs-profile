@@ -297,7 +297,7 @@ export default function Home({ allPostsData }) {
                   title="自らの運命を愛する"
                   image="/images/value3.png"
                 >
-                  良いことも、悪いことも、嬉しいことも、悲しいことも、全部自分の積み上げてきたもの。全て受け入れて、全て飲み込んで、自分の命に変える。
+                  良いことも、悪いことも、嬉しいことも、悲しいことも、全部自分の積み上げてきたもの。全て飲み込んで、自分の命に変える。
                 </CardValue>
               </div>
             </div>
