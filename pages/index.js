@@ -132,7 +132,6 @@ export default function Home({ allPostsData }) {
             </p>
           </div>
           <div className="mx-auto max-w-screen-lg md:flex justify-center">
-            <div className="hidden"></div>
             <CardAbout
               image="/images/about-1.png"
               subheading="趣味"

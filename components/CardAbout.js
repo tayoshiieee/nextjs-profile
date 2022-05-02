@@ -14,7 +14,7 @@ function CardAbout(props) {
           objectFit="contain"
         />
       </div>
-      <p className="text-[#008c8d] font-bold text-xl md:text-2xl text-center my-1 md:my-4">
+      <p className="text-[#008c8d] font-bold text-xl md:text-2xl text-center my-3">
         {subheading}
       </p>
       <p className="leading-7">{text}</p>
