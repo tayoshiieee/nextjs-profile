@@ -135,7 +135,7 @@ export default function Home({ allPostsData }) {
             <CardAbout
               image="/images/about-1.png"
               subheading="趣味"
-              text="映画や美術館、古い家具などが好き。自然の中で過ごしたり、体を動かすことも好きです。おうち時間では料理やプラモデルにもハマりつつあります。"
+              text="映画や美術館、古い家具などが好き。自然の中で過ごしたり、体を動かすことも好き。おうち時間では料理やプラモデルにもハマりつつあります。"
             ></CardAbout>
             <CardAbout
               image="/images/about-2.png"
