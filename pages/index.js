@@ -232,7 +232,7 @@ export default function Home({ allPostsData }) {
                   </div>
                   <div className="mt-2 first:mt-0">
                     <p className="tracking-wider text-sm md:text-base font-semibold text-[#008c8d] opacity-80">
-                      Programing
+                      Programming
                     </p>
                     <ul className="flex">
                       <li className="w-11/12 mr-4">
@@ -252,7 +252,7 @@ export default function Home({ allPostsData }) {
                   </div>
                   <div className="mt-2 first:mt-0">
                     <p className="tracking-wider text-sm md:text-base font-semibold text-[#008c8d] opacity-80">
-                      Machine leaning
+                      Machine learning
                     </p>
                     <ul className="flex">
                       <li className="w-11/12 mr-4">
