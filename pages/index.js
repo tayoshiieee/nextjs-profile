@@ -105,7 +105,7 @@ export default function Home({ allPostsData }) {
               <h1 className="tracking-widest font-bold text-2xl md:text-4xl text-white">
                 YOSHIDA TATSUYA
               </h1>
-              <p className="tracking-widest my-3 text-base md:text-2xl text-white">
+              <p className="opacity-70 font-semibold tracking-widest my-3 text-base md:text-2xl text-white">
                 吉田 達哉
               </p>
             </div>
@@ -127,7 +127,7 @@ export default function Home({ allPostsData }) {
             <p className="text-xl md:text-3xl font-bold tracking-widest">
               私について
             </p>
-            <p className="text-sm md:text-base pl-2 text-[#008c8d] md:flex items-center">
+            <p className="font-semibold text-sm md:text-base pl-2 text-[#008c8d] md:flex items-center">
               ABOUT
             </p>
           </div>
@@ -280,7 +280,7 @@ export default function Home({ allPostsData }) {
             <p className="text-xl md:text-3xl font-bold tracking-widest">
               価値観
             </p>
-            <p className="text-sm md:text-base pl-2 text-[#008c8d] md:flex items-center">
+            <p className="font-semibold text-sm md:text-base pl-2 text-[#008c8d] md:flex items-center">
               VALUES
             </p>
           </div>
