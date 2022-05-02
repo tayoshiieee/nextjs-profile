@@ -17,9 +17,7 @@ function CardValue(props) {
       <p className="text-[#384359] font-bold text-lg text-center my-3 tracking-wider">
         {title}
       </p>
-      <p className="max-w-[320px] text-sm md:text-base leading-7 md:leading-7">
-        {children}
-      </p>
+      <p className="max-w-[320px] text-sm md:text-base leading-7">{children}</p>
     </div>
   );
 }
